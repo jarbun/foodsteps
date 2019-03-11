@@ -1,29 +1,5 @@
-# foodsteps
+# Foodsteps
 
-## Project setup
-```
-npm install
-```
+A modern PWA to create, share and discover recipes. Built using vuejs, vuex, vue-router and firebase.
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
-
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Run your tests
-```
-npm run test
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+**This project is a work in progress.**
