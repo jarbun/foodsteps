@@ -1,6 +1,6 @@
 <template>
   <div>
-    <span class="material-icons">menu</span>
+    <span class="material-icons" @click="$emit('openSideBar')">menu</span>
     <span id="title">Home</span>
     <span class="material-icons">search</span>
   </div>
@@ -29,7 +29,6 @@ export default {
   }
 
   .material-icons{
-    font-size: 24px;
     color: lighten(black, 50%);
     align-self: center;
     padding: 10px;
