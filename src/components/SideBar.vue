@@ -1,8 +1,17 @@
 <template>
   <div id="sidebar">
     <div id="content">
-      <span class="material-icons" id="close-btn" @click="$emit('closeSideBar')">close</span>
-      <div v-if="isAuthenticated" id="authenticated"></div>
+      <span class="material-icons" id="close-button" @click="$emit('closeSideBar')">close</span>
+      <div v-if="isAuthenticated" id="authenticated">
+        <div id="auth-buttons">
+          <button id="signup-button">Sign Up</button>
+          <button id="login-button">Login</button>
+        </div>
+        <button id="about-button">
+          <span class="material-icons">info</span>
+          <span>About</span>
+        </button>
+      </div>
       <div v-else id="unauthenticated"></div>
     </div>
   </div>
@@ -18,6 +27,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+  @import '../assets/master';
+
   #sidebar{
     width: 100%;
     height: 100vh;
@@ -35,11 +46,47 @@ export default {
   }
 
   .material-icons{
-    color: lighten(black, 50%);
+    color: $gray50;
+    cursor: pointer;
   }
 
-  #close-btn{
+  #close-button{
     padding: 0 10px;
     line-height: 50px;
+  }
+
+  #authenticated{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+
+  #auth-buttons{
+    margin: auto 0;
+    button{
+      display: block;
+      margin: 0 auto;
+    }
+  }
+
+  #signup-button{
+    background-color: $green;
+    border-radius: 4px;
+    color: white;
+  }
+
+  #login-button{
+    color: $green;
+  }
+
+  #about-button{
+    margin: 0 auto 10px auto;
+    .material-icons{
+      font-size: 22px;
+      padding-right: 10px;
+    }
+    span{
+      vertical-align: middle;
+    }
   }
 </style>

@@ -32,5 +32,6 @@ export default {
     color: lighten(black, 50%);
     align-self: center;
     padding: 10px;
+    cursor: pointer;
   }
 </style>
