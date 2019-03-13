@@ -1,7 +1,7 @@
 <template>
   <div>
     <span class="material-icons" @click="$emit('openSideBar')">menu</span>
-    <span id="title">Home</span>
+    <h1 id="title">Home</h1>
     <span class="material-icons">search</span>
   </div>
 </template>

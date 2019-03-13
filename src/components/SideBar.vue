@@ -73,6 +73,7 @@ export default {
     background-color: $green;
     border-radius: 4px;
     color: white;
+    box-shadow: $e2dp;
   }
 
   #login-button{

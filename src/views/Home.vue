@@ -2,6 +2,7 @@
   <div class="home">
     <SideBar v-if="isSideBarOpen" isAuthenticated="false" @closeSideBar="closeSideBar"/>
     <AppBar @openSideBar="openSideBar"/>
+    <RecipeCard/>
   </div>
 </template>
 
@@ -9,12 +10,14 @@
 // @ is an alias to /src
 import AppBar from '@/components/AppBar'
 import SideBar from '@/components/SideBar'
+import RecipeCard from '@/components/RecipeCard'
 
 export default {
   name: 'home',
   components: {
     AppBar,
-    SideBar
+    SideBar,
+    RecipeCard
   },
   data () {
     return {
