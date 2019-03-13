@@ -81,7 +81,7 @@ export default {
   }
 
   #about-button{
-    margin: 0 auto 10px auto;
+    margin: 0 auto 60px auto;
     .material-icons{
       font-size: 22px;
       padding-right: 10px;
