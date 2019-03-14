@@ -4,7 +4,7 @@
 
 <script>
 export default {
-  name: 'Chip',
+  name: 'chip',
   props: [
     'text'
   ]

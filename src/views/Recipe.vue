@@ -22,21 +22,34 @@
       <h2>{{ nServings }} servings</h2>
       <h2>{{ timeTaken }} min</h2>
     </div>
+    <div id="buttons">
+      <button :class="{active: activeTab===0}" @click="activeTab = 0">Ingredients</button>
+      <button :class="{active: activeTab===1}" @click="activeTab = 1">Directions</button>
+    </div>
+    <div id="active-component">
+      <Ingredients :ingredients="ingredients" v-if="activeTab===0"/>
+      <Directions :directions="directions" v-else/>
+    </div>
   </div>
 </template>
 
 <script>
 import AppBar from '@/components/Recipe/AppBar'
 import Chip from '@/components/Chip'
+import Ingredients from '@/components/Recipe/Ingredients'
+import Directions from '@/components/Recipe/Directions'
 
 export default {
   name: 'recipe',
   components: {
     AppBar,
-    Chip
+    Chip,
+    Ingredients,
+    Directions
   },
   data () {
     return {
+      activeTab: 0,
       id: 0,
       imageUrl: 'https://images.unsplash.com/photo-1504387432042-8aca549e4729?ixlib=rb-1.2.1&auto=format&fit=crop&w=334&q=80',
       title: 'Blueberry Waffles',
@@ -48,11 +61,28 @@ export default {
       nServings: 2,
       ingredients: [
         {
-          name: '',
-          quantity: ''
+          name: 'All-purpose flour',
+          quantity: '2 cups'
+        },
+        {
+          name: 'Kosher salt',
+          quantity: '1 tsp'
+        },
+        {
+          name: 'Baking powder',
+          quantity: '4 tsp'
+        },
+        {
+          name: 'White sugar',
+          quantity: '1 tbp'
         }
       ],
-      directions: []
+      directions: [
+        'Preheat the waffle iron. Stir together the flour, salt, baking powder, and sugar. Add the milk and eggs and stir to combine.',
+        'Add the melted butter, vanilla, and almond extract. Stir to combine.',
+        'Stir in the blueberries and then pour onto the hot waffle iron. Cook until lightly browned.',
+        'Serve with waffle sauce or with a drizzle of maple syrup. Enjoy!'
+      ]
     }
   }
 }
@@ -131,4 +161,19 @@ h2{
   display: flex;
   justify-content: space-around;
 }
+
+#buttons{
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-around;
+  button{
+    width: 100%;
+  }
+}
+
+.active{
+  color: $green;
+  border-bottom: 1px solid $green;
+}
+
 </style>
