@@ -1,5 +1,5 @@
 <template>
-  <router-link tag="div" to="/recipe/1" id="recipe-card">
+  <router-link tag="div" :to="recipeUrl" id="recipe-card">
     <img :src="imageUrl" alt="recipe image">
     <div id="content">
       <h1>{{ title }}</h1>
@@ -18,14 +18,26 @@
 <script>
 export default {
   name: 'RecipeCard',
+  props: ['recipeId'],
   data () {
     return {
-      imageUrl: 'https://images.unsplash.com/photo-1504387432042-8aca549e4729?ixlib=rb-1.2.1&auto=format&fit=crop&w=334&q=80',
-      title: 'Blueberry Waffles',
-      creator: 'Taylor Kiser',
-      nLikes: 28,
-      timeTaken: 20
+      imageUrl: '',
+      title: '',
+      creator: '',
+      nLikes: 0,
+      timeTaken: 0,
+      recipeUrl: `/recipe/${this.recipeId}`
     }
+  },
+  created () {
+    // Get recipe from store
+    let recipe = this.$store.state.recipes.find(x => x.id === Number(this.recipeId))
+    // Set attributes
+    this.imageUrl = recipe.imageUrl
+    this.title = recipe.title
+    this.creator = recipe.creator
+    this.nLikes = recipe.nLikes
+    this.timeTaken = recipe.timeTaken
   }
 }
 </script>

@@ -2,7 +2,9 @@
   <div class="home">
     <SideBar v-if="isSideBarOpen" isAuthenticated="false" @closeSideBar="closeSideBar"/>
     <AppBar @openSideBar="openSideBar"/>
-    <RecipeCard/>
+    <RecipeCard recipeId="0"/>
+    <RecipeCard recipeId="1"/>
+    <RecipeCard recipeId="2"/>
   </div>
 </template>
 
