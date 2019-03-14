@@ -1,8 +1,8 @@
 <template>
   <div>
-    <span class="material-icons" @click="$emit('openSideBar')">menu</span>
-    <h1 id="title">Home</h1>
-    <span class="material-icons">search</span>
+    <span class="material-icons" @click="$router.go(-1)">arrow_back</span>
+    <h1 id="title">Recipe</h1>
+    <span class="material-icons">share</span>
   </div>
 </template>
 
@@ -13,11 +13,10 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-  @import "../assets/master";
+  @import "../../assets/master";
 
   div{
     height: 50px;
-    box-shadow: $e2dp;
     display: flex;
     justify-content: space-between;
     z-index: 1;

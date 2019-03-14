@@ -7,7 +7,9 @@ $black: lighten(#000, 13%);
 $gray50: lighten(#000, 50%);
 $gray60: lighten(#000, 40%);
 $gray16: lighten(#000, 84%);
+
 $green: #43A047;
+$green50: lighten($green, 50%);
 
 /* elevations */
 $e1dp: 0 1px 6px $gray16;
