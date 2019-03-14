@@ -1,5 +1,5 @@
 <template>
-  <div id="recipe-card">
+  <router-link tag="div" to="/recipe/1" id="recipe-card">
     <img :src="imageUrl" alt="recipe image">
     <div id="content">
       <h1>{{ title }}</h1>
@@ -12,7 +12,7 @@
         <span>{{ timeTaken }} min</span>
       </div>
     </div>
-  </div>
+  </router-link>
 </template>
 
 <script>
