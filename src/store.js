@@ -13,16 +13,41 @@ export default new Vuex.Store({
         creator: 'Taylor Kiser',
         nLikes: 28,
         timeTaken: 20,
-        description: '',
-        tags: [],
-        nServings: 0,
+        description: 'Healthy delicious homemade waffles with blueberries, perfect for a quick snack',
+        tags: ['Vegetarian', 'Dessert', 'Quick'],
+        nServings: 2,
         ingredients: [
           {
-            name: '',
-            quantity: ''
+            name: 'All-purpose flour',
+            quantity: '2 cups'
+          },
+          {
+            name: 'Kosher salt',
+            quantity: '1 tsp'
+          },
+          {
+            name: 'Baking powder',
+            quantity: '4 tsp'
+          },
+          {
+            name: 'White sugar',
+            quantity: '1 tbp'
+          },
+          {
+            name: 'Milk',
+            quantity: '1/2 cup'
+          },
+          {
+            name: 'Eggs',
+            quantity: '2 nos'
           }
         ],
-        directions: []
+        directions: [
+          'Preheat the waffle iron. Stir together the flour, salt, baking powder, and sugar. Add the milk and eggs and stir to combine.',
+          'Add the melted butter, vanilla, and almond extract. Stir to combine.',
+          'Stir in the blueberries and then pour onto the hot waffle iron. Cook until lightly browned.',
+          'Serve with waffle sauce or with a drizzle of maple syrup. Enjoy!'
+        ]
       },
       {
         id: 1,
@@ -31,16 +56,41 @@ export default new Vuex.Store({
         creator: 'Lucy Lee',
         nLikes: 32,
         timeTaken: 10,
-        description: '',
-        tags: [],
-        nServings: 0,
+        description: 'Easy, quick and healthy sandwich perfect for any time of the day',
+        tags: ['Vegetarian', 'Quick', 'Snacks'],
+        nServings: 2,
         ingredients: [
           {
-            name: '',
-            quantity: ''
+            name: 'All-purpose flour',
+            quantity: '2 cups'
+          },
+          {
+            name: 'Kosher salt',
+            quantity: '1 tsp'
+          },
+          {
+            name: 'Baking powder',
+            quantity: '4 tsp'
+          },
+          {
+            name: 'White sugar',
+            quantity: '1 tbp'
+          },
+          {
+            name: 'Milk',
+            quantity: '1/2 cup'
+          },
+          {
+            name: 'Eggs',
+            quantity: '2 nos'
           }
         ],
-        directions: []
+        directions: [
+          'Preheat the waffle iron. Stir together the flour, salt, baking powder, and sugar. Add the milk and eggs and stir to combine.',
+          'Add the melted butter, vanilla, and almond extract. Stir to combine.',
+          'Stir in the blueberries and then pour onto the hot waffle iron. Cook until lightly browned.',
+          'Serve with waffle sauce or with a drizzle of maple syrup. Enjoy!'
+        ]
       },
       {
         id: 2,
@@ -49,16 +99,41 @@ export default new Vuex.Store({
         creator: 'Louis Hansel',
         nLikes: 12,
         timeTaken: 40,
-        description: '',
-        tags: [],
-        nServings: 0,
+        description: 'Crispy delicious fried potato fries',
+        tags: ['Vegetarian', 'Snacks'],
+        nServings: 2,
         ingredients: [
           {
-            name: '',
-            quantity: ''
+            name: 'All-purpose flour',
+            quantity: '2 cups'
+          },
+          {
+            name: 'Kosher salt',
+            quantity: '1 tsp'
+          },
+          {
+            name: 'Baking powder',
+            quantity: '4 tsp'
+          },
+          {
+            name: 'White sugar',
+            quantity: '1 tbp'
+          },
+          {
+            name: 'Milk',
+            quantity: '1/2 cup'
+          },
+          {
+            name: 'Eggs',
+            quantity: '2 nos'
           }
         ],
-        directions: []
+        directions: [
+          'Preheat the waffle iron. Stir together the flour, salt, baking powder, and sugar. Add the milk and eggs and stir to combine.',
+          'Add the melted butter, vanilla, and almond extract. Stir to combine.',
+          'Stir in the blueberries and then pour onto the hot waffle iron. Cook until lightly browned.',
+          'Serve with waffle sauce or with a drizzle of maple syrup. Enjoy!'
+        ]
       }
     ]
   },

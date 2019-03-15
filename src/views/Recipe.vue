@@ -50,47 +50,7 @@ export default {
   data () {
     return {
       activeTab: 0,
-      id: 0,
-      imageUrl: 'https://images.unsplash.com/photo-1504387432042-8aca549e4729?ixlib=rb-1.2.1&auto=format&fit=crop&w=334&q=80',
-      title: 'Blueberry Waffles',
-      creator: 'Taylor Kiser',
-      nLikes: 28,
-      timeTaken: 20,
-      description: 'Healthy delicious homemade waffles with blueberries, perfect for a quick snack',
-      tags: ['Vegetarian', 'Dessert', 'Quick', 'Snacks', 'Drinks'],
-      nServings: 2,
-      ingredients: [
-        {
-          name: 'All-purpose flour',
-          quantity: '2 cups'
-        },
-        {
-          name: 'Kosher salt',
-          quantity: '1 tsp'
-        },
-        {
-          name: 'Baking powder',
-          quantity: '4 tsp'
-        },
-        {
-          name: 'White sugar',
-          quantity: '1 tbp'
-        },
-        {
-          name: 'Milk',
-          quantity: '1/2 cup'
-        },
-        {
-          name: 'Eggs',
-          quantity: '2 nos'
-        }
-      ],
-      directions: [
-        'Preheat the waffle iron. Stir together the flour, salt, baking powder, and sugar. Add the milk and eggs and stir to combine.',
-        'Add the melted butter, vanilla, and almond extract. Stir to combine.',
-        'Stir in the blueberries and then pour onto the hot waffle iron. Cook until lightly browned.',
-        'Serve with waffle sauce or with a drizzle of maple syrup. Enjoy!'
-      ]
+      ...this.$store.state.recipes.find(x => x.id === Number(this.$route.params.id))
     }
   }
 }
