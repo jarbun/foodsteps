@@ -52,6 +52,7 @@ export default {
 }
 
 img{
+  min-width: 100px;
   width: 100px;
   height: 80px;
   object-fit: cover;
