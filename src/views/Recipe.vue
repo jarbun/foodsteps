@@ -75,6 +75,14 @@ export default {
         {
           name: 'White sugar',
           quantity: '1 tbp'
+        },
+        {
+          name: 'Milk',
+          quantity: '1/2 cup'
+        },
+        {
+          name: 'Eggs',
+          quantity: '2 nos'
         }
       ],
       directions: [
@@ -110,7 +118,7 @@ export default {
 
 img{
   width: 100%;
-  height: 200px;
+  height: 30vh;
   object-fit: cover;
   box-shadow: $e2dp;
 }
@@ -125,7 +133,7 @@ header{
 }
 
 h2{
-  color: $gray50;
+  color: $gray60;
   letter-spacing: 0.4px;
 }
 
@@ -148,6 +156,7 @@ h2{
 
 #tags{
   margin: 10px auto;
+  padding: 0 10px;
   max-width: 100%;
   overflow-x: scroll;
   white-space: nowrap;
@@ -168,12 +177,12 @@ h2{
   justify-content: space-around;
   button{
     width: 100%;
+    color: $gray60;
+    border-bottom: 1px solid $light-gray;
+  }
+  .active{
+    color: $green;
+    border-bottom: 1px solid $green;
   }
 }
-
-.active{
-  color: $green;
-  border-bottom: 1px solid $green;
-}
-
 </style>
