@@ -7,10 +7,10 @@
           <button id="signup-button">Sign Up</button>
           <button id="login-button">Login</button>
         </div>
-        <button id="about-button">
+        <router-link tag="button" to="/about" id="about-button">
           <span class="material-icons">info</span>
           <span>About</span>
-        </button>
+        </router-link>
       </div>
       <div v-else id="unauthenticated"></div>
     </div>

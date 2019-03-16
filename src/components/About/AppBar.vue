@@ -1,8 +1,7 @@
 <template>
   <div>
     <span class="material-icons" @click="$router.go(-1)">arrow_back</span>
-    <h1 id="title">Recipe</h1>
-    <span class="material-icons">share</span>
+    <h1 id="title">About</h1>
   </div>
 </template>
 
@@ -20,12 +19,16 @@ export default {
     display: flex;
     justify-content: space-between;
     z-index: 1;
+    box-shadow: $e2dp;
   }
 
   #title{
     font-size: 18px;
     font-weight: $medium;
     align-self: center;
+    flex-grow: 1;
+    text-align: center;
+    margin-right: 40px;
   }
 
   .material-icons{
