@@ -1,18 +1,19 @@
 <template>
   <div>
     <span class="material-icons" @click="$router.go(-1)">arrow_back</span>
-    <h1 id="title">About</h1>
+    <h1 id="title">{{ title }}</h1>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'AppBar'
+  name: 'AppBar',
+  props: ['title']
 }
 </script>
 
 <style lang="scss" scoped>
-  @import "../../assets/master";
+  @import "../assets/master";
 
   div{
     height: 50px;

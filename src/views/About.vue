@@ -1,6 +1,6 @@
 <template>
   <div>
-    <AppBar/>
+    <BasicAppBar title="About"/>
     <h1>FoodSteps</h1>
     <h4>v1.0.0</h4>
     <p>A web app to create, share and discover recipes</p>
@@ -8,12 +8,12 @@
 </template>
 
 <script>
-import AppBar from '@/components/About/AppBar'
+import BasicAppBar from '@/components/BasicAppBar'
 
 export default {
   name: 'about',
   components: {
-    AppBar
+    BasicAppBar
   }
 }
 </script>
