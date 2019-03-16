@@ -4,7 +4,9 @@
       <span class="material-icons" id="close-button" @click="$emit('closeSideBar')">close</span>
       <div v-if="isAuthenticated" id="authenticated">
         <div id="auth-buttons">
-          <button id="signup-button">Sign Up</button>
+          <router-link tag="button" to="/signup" id="signup-button">
+            Sign Up
+          </router-link>
           <button id="login-button">Login</button>
         </div>
         <router-link tag="button" to="/about" id="about-button">

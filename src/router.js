@@ -25,6 +25,11 @@ export default new Router({
       path: '/recipe/:id',
       name: 'recipe',
       component: () => import('./views/Recipe.vue')
+    },
+    {
+      path: '/signup',
+      name: 'signup',
+      component: () => import('./views/SignUp.vue')
     }
   ]
 })
