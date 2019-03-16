@@ -10,8 +10,8 @@
 
 <script>
 // @ is an alias to /src
-import AppBar from '@/components/AppBar'
-import SideBar from '@/components/SideBar'
+import AppBar from '@/components/Home/AppBar'
+import SideBar from '@/components/Home/SideBar'
 import RecipeCard from '@/components/RecipeCard'
 
 export default {

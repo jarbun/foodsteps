@@ -13,7 +13,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-  @import "../assets/master";
+  @import "../../assets/master";
 
   div{
     height: 50px;
