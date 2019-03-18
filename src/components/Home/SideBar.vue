@@ -3,6 +3,24 @@
     <div id="content">
       <span class="material-icons" id="close-button" @click="$emit('closeSideBar')">close</span>
       <div v-if="isAuthenticated" id="authenticated">
+        <div id="profile">
+          <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" alt="profile">
+          <span id="name">Lucy Lee</span>
+          <span id="username">@lucylee</span>
+        </div>
+        <div id="buttons">
+          <router-link tag="button" to="/shoppinglist" id="about-button">
+            <span class="material-icons">shopping_cart</span>
+            <span>Shopping List</span>
+          </router-link>
+          <router-link tag="button" to="/about" id="about-button">
+            <span class="material-icons">info</span>
+            <span>About</span>
+          </router-link>
+        </div>
+        <router-link tag="button" to="/logout" id="logout-button">
+          Logout
+        </router-link>
       </div>
       <div v-else id="unauthenticated">
         <div id="auth-buttons">
@@ -92,5 +110,44 @@ export default {
     span{
       vertical-align: middle;
     }
+  }
+
+  #authenticated{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: space-between;
+  }
+
+  #profile{
+    text-align: center;
+    img{
+      width: 80px;
+      height: 80px;
+      border-radius: 100%;
+      object-fit: cover;
+    }
+  }
+  
+  #name{
+    display: block;
+  }
+
+  #username{
+    display: block;
+    color: $gray50;
+  }
+
+  #buttons{
+    margin: 0 auto 60px auto;
+    button{
+      margin: 25px 0;
+      display: block;
+    }
+  }
+
+  #logout-button{
+    color: $green;
+    margin-bottom: 60px;
   }
 </style>
