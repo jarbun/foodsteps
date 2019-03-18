@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    <SideBar v-if="isSideBarOpen" isAuthenticated="false" @closeSideBar="closeSideBar"/>
+    <SideBar v-if="isSideBarOpen" :isAuthenticated="false" @closeSideBar="closeSideBar"/>
     <AppBar @openSideBar="openSideBar"/>
     <RecipeCard recipeId="0"/>
     <RecipeCard recipeId="1"/>

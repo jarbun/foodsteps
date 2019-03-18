@@ -3,6 +3,8 @@
     <div id="content">
       <span class="material-icons" id="close-button" @click="$emit('closeSideBar')">close</span>
       <div v-if="isAuthenticated" id="authenticated">
+      </div>
+      <div v-else id="unauthenticated">
         <div id="auth-buttons">
           <router-link tag="button" to="/signup" id="signup-button">
             Sign Up
@@ -14,7 +16,6 @@
           <span>About</span>
         </router-link>
       </div>
-      <div v-else id="unauthenticated"></div>
     </div>
   </div>
 </template>
@@ -57,7 +58,7 @@ export default {
     line-height: 50px;
   }
 
-  #authenticated{
+  #unauthenticated{
     display: flex;
     flex-direction: column;
     height: 100%;
