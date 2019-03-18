@@ -9,11 +9,15 @@
           <span id="username">@lucylee</span>
         </div>
         <div id="buttons">
-          <router-link tag="button" to="/shoppinglist" id="about-button">
+          <router-link tag="button" to="/profile">
+            <span class="material-icons">person</span>
+            <span>Profile</span>
+          </router-link>
+          <router-link tag="button" to="/shoppinglist">
             <span class="material-icons">shopping_cart</span>
             <span>Shopping List</span>
           </router-link>
-          <router-link tag="button" to="/about" id="about-button">
+          <router-link tag="button" to="/about">
             <span class="material-icons">info</span>
             <span>About</span>
           </router-link>
@@ -126,6 +130,7 @@ export default {
       height: 80px;
       border-radius: 100%;
       object-fit: cover;
+      box-shadow: $e2dp;
     }
   }
   
@@ -143,6 +148,15 @@ export default {
     button{
       margin: 25px 0;
       display: block;
+      width: 100%;
+      text-align: left;
+    }
+    .material-icons{
+      font-size: 22px;
+      padding-right: 10px;
+    }
+    span{
+      vertical-align: middle;
     }
   }
 
