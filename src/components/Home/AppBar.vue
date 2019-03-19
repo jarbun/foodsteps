@@ -21,6 +21,10 @@ export default {
     display: flex;
     justify-content: space-between;
     z-index: 1;
+    position: fixed;
+    background-color: white;
+    width: 100%;
+    top: 0;
   }
 
   #title{

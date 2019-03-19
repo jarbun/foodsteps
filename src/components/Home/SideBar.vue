@@ -59,6 +59,8 @@ export default {
     height: 100vh;
     position: fixed;
     background-color: rgba(0, 0, 0, 0.15);
+    top: 0;
+    z-index: 2;
   }
 
   #content{
