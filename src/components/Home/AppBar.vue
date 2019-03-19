@@ -1,7 +1,7 @@
 <template>
   <div>
     <span class="material-icons" @click="$emit('openSideBar')">menu</span>
-    <h1 id="title">Home</h1>
+    <h1 id="title">Foodsteps</h1>
     <span class="material-icons">search</span>
   </div>
 </template>
@@ -19,7 +19,6 @@ export default {
     height: 50px;
     box-shadow: $e2dp;
     display: flex;
-    justify-content: space-between;
     z-index: 1;
     position: fixed;
     background-color: white;
@@ -28,9 +27,12 @@ export default {
   }
 
   #title{
-    font-size: 18px;
+    font-size: 19px;
     font-weight: $medium;
     align-self: center;
+    text-align: left;
+    flex-grow: 1;
+    margin-left: 10px;
   }
 
   .material-icons{
