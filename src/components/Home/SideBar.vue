@@ -140,7 +140,7 @@ export default {
 
   #username{
     display: block;
-    color: $gray50;
+    color: $gray60;
   }
 
   #buttons{

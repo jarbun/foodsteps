@@ -17,8 +17,8 @@
       </div>
     </div>
     <div id="recipe-list">
-      <RecipeCard recipeId="1"/>
-      <RecipeCard recipeId="2"/>
+      <RecipeCard recipeId="1" :isEditable="true"/>
+      <RecipeCard recipeId="2" :isEditable="true"/>
     </div>
   </div>
 </template>
@@ -62,7 +62,7 @@ export default {
 
 #username{
   display: block;
-  color: $gray50;
+  color: $gray60;
 }
 
 #info{
@@ -84,7 +84,7 @@ export default {
   .subtext{
     font-size: 14px;
     font-weight: $medium;
-    color: $gray50;
+    color: $gray60;
     letter-spacing: 1.25px;
     text-transform: uppercase;
     margin-top: 5px;

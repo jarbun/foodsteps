@@ -2,6 +2,7 @@
   <router-link tag="div" :to="recipeUrl" class="recipe-card">
     <img :src="imageUrl" alt="recipe image">
     <div class="content">
+      <router-link v-if="isEditable" tag="span" to="/edit" class="material-icons edit-icon">edit</router-link>
       <h1>{{ title }}</h1>
       <h2 class="creator">{{ creator }}</h2>
       <div class="extra">
@@ -18,7 +19,7 @@
 <script>
 export default {
   name: 'RecipeCard',
-  props: ['recipeId'],
+  props: ['recipeId', 'isEditable'],
   data () {
     return {
       imageUrl: '',
@@ -89,5 +90,15 @@ img{
     padding-left: 4px;
     align-self: center;
   }
+}
+
+.edit-icon{
+  position: absolute;
+  right: 15px;
+  color: $gray50;
+  cursor: pointer;
+  border-radius: 50%;
+  padding: 4px;
+  background-color: $gray5;
 }
 </style>
