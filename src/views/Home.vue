@@ -6,6 +6,9 @@
     <div v-else id="recipes">
       <RecipeCard v-for="recipeId in recipeIds" :recipeId="recipeId" :key="recipeId"/>
     </div>
+    <router-link tag="div" to="/add" id="add-button">
+      <span class="material-icons">add</span>
+    </router-link>
   </div>
 </template>
 
@@ -54,5 +57,23 @@ export default {
   #recipes{
     margin-top: 65px;
     margin-bottom: 15px;
+  }
+
+  #add-button{
+    height: 56px;
+    width: 56px;
+    background-color: $green;
+    text-align: center;
+    border-radius: 100%;
+    box-shadow: $e5dp;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    cursor: pointer;
+    .material-icons{
+      font-size: 30px;
+      color: white;
+      line-height: 56px;
+    }
   }
 </style>
