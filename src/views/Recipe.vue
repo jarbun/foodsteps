@@ -1,34 +1,34 @@
 <template>
   <div id="recipe">
     <AppBar/>
-    <img :src="imageUrl" alt="recipe image">
+    <img :src="recipe.imageUrl" alt="recipe image">
     <header>
       <div>
-        <h1>{{ title }}</h1>
-        <h2>{{ creator }}</h2>
+        <h1>{{ recipe.title }}</h1>
+        <h2>{{ recipe.user }}</h2>
       </div>
       <span id="likes">
-        <span>{{ nLikes }}</span>
+        <span>{{ recipe.nLikes }}</span>
         <span class="material-icons">favorite</span>
       </span>
     </header>
     <div id="description">
-      {{ description }}
+      {{ recipe.description }}
     </div>
     <div id="tags">
-      <Chip v-for="(tag, i) in tags" :text="tag" :key="i"/>
+      <Chip v-for="(tag, i) in recipe.tags" :text="tag" :key="i"/>
     </div>
     <div id="info">
-      <h2>{{ nServings }} servings</h2>
-      <h2>{{ timeTaken }} min</h2>
+      <h2>{{ recipe.nServings }} servings</h2>
+      <h2>{{ recipe.timeTaken }} min</h2>
     </div>
     <div id="buttons">
       <button :class="{active: activeTab===0}" @click="activeTab = 0">Ingredients</button>
       <button :class="{active: activeTab===1}" @click="activeTab = 1">Directions</button>
     </div>
     <div id="active-component">
-      <Ingredients :ingredients="ingredients" v-if="activeTab===0"/>
-      <Directions :directions="directions" v-else/>
+      <Ingredients :ingredients="recipe.ingredients" v-if="activeTab===0"/>
+      <Directions :directions="recipe.directions" v-else/>
     </div>
   </div>
 </template>
@@ -49,8 +49,12 @@ export default {
   },
   data () {
     return {
-      activeTab: 0,
-      ...this.$store.state.recipes.find(x => x.id === Number(this.$route.params.id))
+      activeTab: 0
+    }
+  },
+  computed: {
+    recipe () {
+      return this.$store.state.recipes.find(x => x.id === this.$route.params.id)
     }
   }
 }
