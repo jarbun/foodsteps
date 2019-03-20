@@ -21,14 +21,14 @@ export default new Vuex.Store({
     loadRecipes (context) {
       this.commit('setRecipesLoading', true)
       db.collection('recipes').get()
-      .then(querySnapshot => {
-        let recipes = []
-        querySnapshot.forEach(doc => {
-          recipes.push({ ...doc.data(), id: doc.id })
+        .then(querySnapshot => {
+          let recipes = []
+          querySnapshot.forEach(doc => {
+            recipes.push({ ...doc.data(), id: doc.id })
+          })
+          this.commit('loadRecipes', recipes)
+          this.commit('setRecipesLoading', false)
         })
-        this.commit('loadRecipes', recipes)
-        this.commit('setRecipesLoading', false)
-      })
     }
   }
 })
