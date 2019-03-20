@@ -1,16 +1,16 @@
 <template>
   <router-link tag="div" :to="recipeUrl" class="recipe-card">
-    <img :src="imageUrl" alt="recipe image">
+    <img :src="recipe.imageUrl" alt="recipe image">
     <div class="content">
       <router-link v-if="isEditable" tag="span" to="/edit" class="material-icons edit-icon">edit</router-link>
-      <h1>{{ title }}</h1>
-      <h2 class="creator">{{ creator }}</h2>
+      <h1>{{ recipe.title }}</h1>
+      <h2 class="user">{{ recipe.user }}</h2>
       <div class="extra">
         <span class="likes">
-          <span>{{ nLikes }}</span>
+          <span>{{ recipe.nLikes }}</span>
           <span class="material-icons">favorite</span>
         </span>
-        <span>{{ timeTaken }} min</span>
+        <span>{{ recipe.timeTaken }} min</span>
       </div>
     </div>
   </router-link>
@@ -22,23 +22,13 @@ export default {
   props: ['recipeId', 'isEditable'],
   data () {
     return {
-      imageUrl: null,
-      title: null,
-      creator: null,
-      nLikes: null,
-      timeTaken: null,
       recipeUrl: `/recipe/${this.recipeId}`
     }
   },
-  created () {
-    // Get recipe from store
-    let recipe = this.$store.state.recipes.find(x => x.id === this.recipeId)
-    // Set attributes
-    this.imageUrl = recipe.imageUrl
-    this.title = recipe.title
-    this.creator = recipe.creator
-    this.nLikes = recipe.nLikes
-    this.timeTaken = recipe.timeTaken
+  computed: {
+    recipe () {
+      return this.$store.state.recipes.find(x => x.id === this.recipeId)
+    }
   }
 }
 </script>
@@ -68,7 +58,7 @@ img{
   margin: 5px 20px 5px 10px;
 }
 
-.creator{
+.user{
   font-size: 13px;
   color: $gray60;
   letter-spacing: 0.4px;
