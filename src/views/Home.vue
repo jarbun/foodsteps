@@ -3,15 +3,7 @@
     <SideBar v-if="isSideBarOpen" :isAuthenticated="true" @closeSideBar="closeSideBar"/>
     <AppBar @openSideBar="openSideBar"/>
     <div id="recipes">
-      <RecipeCard recipeId="0"/>
-      <RecipeCard recipeId="1"/>
-      <RecipeCard recipeId="2"/>
-      <RecipeCard recipeId="0"/>
-      <RecipeCard recipeId="1"/>
-      <RecipeCard recipeId="2"/>
-      <RecipeCard recipeId="0"/>
-      <RecipeCard recipeId="1"/>
-      <RecipeCard recipeId="2"/>
+      <RecipeCard v-for="recipeId in recipeIds" :recipeId="recipeId" :key="recipeId"/>
     </div>
   </div>
 </template>
@@ -32,6 +24,11 @@ export default {
   data () {
     return {
       isSideBarOpen: false
+    }
+  },
+  computed: {
+    recipeIds () {
+      return this.$store.state.recipes.map(x => x.id)
     }
   },
   methods: {

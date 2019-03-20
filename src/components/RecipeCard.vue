@@ -22,17 +22,17 @@ export default {
   props: ['recipeId', 'isEditable'],
   data () {
     return {
-      imageUrl: '',
-      title: '',
-      creator: '',
-      nLikes: 0,
-      timeTaken: 0,
+      imageUrl: null,
+      title: null,
+      creator: null,
+      nLikes: null,
+      timeTaken: null,
       recipeUrl: `/recipe/${this.recipeId}`
     }
   },
   created () {
     // Get recipe from store
-    let recipe = this.$store.state.recipes.find(x => x.id === Number(this.recipeId))
+    let recipe = this.$store.state.recipes.find(x => x.id === this.recipeId)
     // Set attributes
     this.imageUrl = recipe.imageUrl
     this.title = recipe.title
