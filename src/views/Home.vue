@@ -2,7 +2,8 @@
   <div class="home">
     <SideBar v-if="isSideBarOpen" :isAuthenticated="true" @closeSideBar="closeSideBar"/>
     <AppBar @openSideBar="openSideBar"/>
-    <div id="recipes">
+    <LoadingScreen v-if="isRecipesLoading"/>
+    <div v-else id="recipes">
       <RecipeCard v-for="recipeId in recipeIds" :recipeId="recipeId" :key="recipeId"/>
     </div>
   </div>
@@ -12,6 +13,7 @@
 // @ is an alias to /src
 import AppBar from '@/components/Home/AppBar'
 import SideBar from '@/components/Home/SideBar'
+import LoadingScreen from '@/components/Home/LoadingScreen'
 import RecipeCard from '@/components/RecipeCard'
 
 export default {
@@ -19,6 +21,7 @@ export default {
   components: {
     AppBar,
     SideBar,
+    LoadingScreen,
     RecipeCard
   },
   data () {
@@ -29,6 +32,9 @@ export default {
   computed: {
     recipeIds () {
       return this.$store.state.recipes.map(x => x.id)
+    },
+    isRecipesLoading () {
+      return this.$store.state.isRecipesLoading
     }
   },
   methods: {
