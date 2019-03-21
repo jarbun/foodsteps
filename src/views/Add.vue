@@ -12,6 +12,16 @@
     <div id="tags">
       <Chip v-for="(tag, index) in tags" :key="index" :name="tag.name" :isActive="tag.isActive" @click.native="toggleActiveState(index)"/>
     </div>
+    <div id="info">
+      <div>
+        <span>Servings</span>
+        <input type="number" placeholder="02">
+      </div>
+      <div>
+        <span>Cook Time</span>
+        <input type="number" placeholder="60">
+      </div>
+    </div> 
   </div>
 </template>
 
@@ -52,7 +62,7 @@ export default {
     }
   },
   methods: {
-    toggleActiveState(index){
+    toggleActiveState (index) {
       this.tags[index].isActive = !this.tags[index].isActive
     }
   }
@@ -121,7 +131,7 @@ textarea{
 }
 
 #tags{
-  margin: 10px auto;
+  margin: 10px auto 0 auto;
   padding: 0 10px;
   max-width: 100%;
   overflow-x: scroll;
@@ -129,5 +139,26 @@ textarea{
 }
 #tags::-webkit-scrollbar{
   display: none;
+}
+
+#info{
+  margin-top: 16px;
+  display: flex;
+  justify-content: space-evenly;
+  div{
+    display: flex;
+    flex-direction: column;
+    width: 100px;
+    text-align: center;
+    span{
+      color: $gray60;
+      margin-bottom: 5px;
+    }
+    input{
+      width: 60px;
+      margin: 0 auto;
+      text-align: center;
+    }
+  }
 }
 </style>
