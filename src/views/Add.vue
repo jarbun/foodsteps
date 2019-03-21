@@ -9,16 +9,52 @@
     </div>
     <input type="text" placeholder="Title">
     <textarea name="" id="" placeholder="Description"></textarea>
+    <div id="tags">
+      <Chip v-for="(tag, index) in tags" :key="index" :name="tag.name" :isActive="tag.isActive" @click.native="toggleActiveState(index)"/>
+    </div>
   </div>
 </template>
 
 <script>
 import BasicAppBar from '@/components/BasicAppBar'
+import Chip from '@/components/Chip'
 
 export default {
   name: 'add',
   components: {
-    BasicAppBar
+    BasicAppBar,
+    Chip
+  },
+  data () {
+    return {
+      tags: [
+        {
+          name: 'Vegetarian',
+          isActive: false
+        },
+        {
+          name: 'Dessert',
+          isActive: false
+        },
+        {
+          name: 'Snacks',
+          isActive: false
+        },
+        {
+          name: 'Drinks',
+          isActive: false
+        },
+        {
+          name: 'Quick',
+          isActive: false
+        }
+      ]
+    }
+  },
+  methods: {
+    toggleActiveState(index){
+      this.tags[index].isActive = !this.tags[index].isActive
+    }
   }
 }
 </script>
@@ -83,5 +119,15 @@ textarea{
     font-size: 15px;
   }
 }
-</style>
 
+#tags{
+  margin: 10px auto;
+  padding: 0 10px;
+  max-width: 100%;
+  overflow-x: scroll;
+  white-space: nowrap;
+}
+#tags::-webkit-scrollbar{
+  display: none;
+}
+</style>
