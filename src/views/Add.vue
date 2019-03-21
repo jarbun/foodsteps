@@ -8,7 +8,7 @@
       </button>
     </div>
     <input type="text" placeholder="Title">
-    <textarea name="" id="" placeholder="Description"></textarea>
+    <textarea placeholder="Description"></textarea>
     <div id="tags">
       <Chip v-for="(tag, index) in tags" :key="index" :name="tag.name" :isActive="tag.isActive" @click.native="toggleActiveState(index)"/>
     </div>
@@ -31,13 +31,18 @@
         <div id="add-ingredients">
           <input type="text" placeholder="Ingredient" id="ingredient-name-input">
           <input type="text" placeholder="Quantity" id="ingredient-quality-input">
-          <div id="add-ingredient-button">
+          <div class="add-button">
             <span class="material-icons">add</span>
           </div>
         </div>
       </div>
       <div id="directions" v-else>
-
+        <div id="add-directions">
+          <textarea placeholder="Add directions" id="direction-input"></textarea>
+          <div class="add-button">
+            <span class="material-icons">add</span>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -217,7 +222,8 @@ textarea{
 #ingredient-quality-input{
   width: calc(45% - 49px);
 }
-#add-ingredient-button{
+
+.add-button{
   width: 48px;
   height: 48px;
   box-shadow: $e1dp;
@@ -230,5 +236,19 @@ textarea{
     line-height: 48px;
     color: $gray60;
   }
+}
+
+#add-directions{
+  display: flex;
+  background-color: $gray7;
+  margin: 10px 16px;
+  border-radius: 4px;
+  .add-button{
+    margin-right: 10px;
+  }
+}
+#direction-input{
+  margin: 0;
+  width: calc(100% - 48px - 10px);
 }
 </style>
