@@ -16,7 +16,7 @@
       {{ recipe.description }}
     </div>
     <div id="tags">
-      <Chip v-for="(tag, i) in recipe.tags" :text="tag" :key="i"/>
+      <Chip v-for="(tag, i) in recipe.tags" :name="tag" :isActive="true" :key="i"/>
     </div>
     <div id="info">
       <h2>{{ recipe.nServings }} servings</h2>
